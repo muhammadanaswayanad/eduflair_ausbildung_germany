@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K7VXCBQ9');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Eduflair</title>
+
+    <link rel="icon" href="https://eduflair.com/favicon.png" sizes="32x32" />
+    <link rel="icon" href="https://eduflair.com/favicon.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://eduflair.com/favicon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        brand: { 700: '#14532D', 900: '#0B3B24' },
+                        sand: { 50: '#FAFAF8', 100: '#F4F1EA', 200: '#E7E1D4' }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="bg-sand-50 text-slate-800 antialiased min-h-screen">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7VXCBQ9"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="h-1 w-full grid grid-cols-3">
+        <div class="bg-black"></div>
+        <div class="bg-[#DD0000]"></div>
+        <div class="bg-[#FFCC00]"></div>
+    </div>
+
+    <main class="min-h-[calc(100vh-4px)] flex items-center justify-center px-4 py-12">
+        <div class="max-w-md w-full bg-white border border-sand-200 rounded-2xl p-8 sm:p-10 text-center">
+            <a href="index.html" class="inline-block mb-6">
+                <img src="https://eduflair.com/assets/eduflair%20black-CdfIneoY.png" alt="Eduflair" class="h-10 w-auto mx-auto">
+            </a>
+            <div class="w-14 h-14 bg-brand-900 text-white rounded-full flex items-center justify-center mx-auto mb-5">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h1 class="text-3xl font-extrabold text-brand-900 mb-3">Thank you</h1>
+            <p class="text-slate-600 mb-7 leading-relaxed">
+                Your details are in. A counselor will call shortly — whether you need A1–B2 classes in Calicut or Ausbildung course and student-visa processing because you’re already certified.
+            </p>
+            <div class="flex flex-col gap-3 mb-8">
+                <a href="https://wa.me/918352010101?text=Hi%2C%20I%20want%20to%20know%20more%20about%20German%20language%20classes%20and%20Ausbildung%20student%20course%20processing%20at%20Eduflair" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white font-semibold py-3 rounded-xl hover:bg-[#20b858]">
+                    Chat on WhatsApp
+                </a>
+                <a href="tel:+918352010101" class="bg-brand-900 text-white font-semibold py-3 rounded-xl hover:bg-brand-700">
+                    Call +91 8352 01 01 01
+                </a>
+            </div>
+            <a href="index.html" class="text-sm font-semibold text-brand-700 hover:text-brand-900">Back to the page</a>
+        </div>
+    </main>
+    <script>
+        if (typeof confetti === 'function') {
+            confetti({ particleCount: 50, spread: 55, origin: { y: 0.12 }, colors: ['#0B3B24', '#DD0000', '#FFCC00'] });
+        }
+    </script>
+</body>
+</html>
