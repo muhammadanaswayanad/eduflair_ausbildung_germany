@@ -22,14 +22,15 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    fontFamily: { sans: ['Open Sans', 'system-ui', 'sans-serif'] },
+                    fontWeight: { medium: '700', semibold: '700', bold: '700', extrabold: '800' },
                     colors: {
                         ink: '#101828',
                         brand: { 50: '#E8F5EE', 100: '#C5E6D4', 500: '#1F7A4D', 600: '#166534', 700: '#14532D', 900: '#0B3B24' },
@@ -41,6 +42,7 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
+        body { font-weight: 700; }
         section[id], #apply { scroll-margin-top: 5.5rem; }
         details summary { list-style: none; }
         details summary::-webkit-details-marker { display: none; }
@@ -154,7 +156,7 @@
     </style>
 </head>
 
-<body class="bg-sand-50 text-ink antialiased pb-24 md:pb-0">
+<body class="bg-sand-50 text-ink antialiased font-sans font-bold pb-24 md:pb-0">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7VXCBQ9"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
@@ -166,8 +168,9 @@
 
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-sand-200">
         <div class="max-w-6xl mx-auto px-4 h-16 sm:h-[4.25rem] flex items-center justify-between gap-3">
-            <a href="#apply" class="flex-shrink-0">
+            <a href="#apply" class="flex items-center gap-3 min-w-0 flex-shrink-0">
                 <img src="images/logo-black.png" class="h-8 sm:h-10 w-auto" alt="Eduflair">
+                <img src="images/worlds-largest-language-campus.webp" alt="World's largest language campus" width="1024" height="193" class="hidden sm:block h-7 sm:h-8 w-auto border-l border-sand-200 pl-3">
             </a>
             <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
                 <a href="#course" class="nav-link">German course</a>
@@ -213,10 +216,10 @@
                     </div>
                     <div class="hidden sm:grid grid-cols-2 gap-3 max-w-md">
                         <figure class="media-card rounded-xl h-28">
-                            <img src="images/DSC01527-1-924x520.jpg" alt="German class at Eduflair Calicut" width="462" height="260">
+                            <img src="images/class-facing.webp" alt="German class at Eduflair Calicut" width="1800" height="1200">
                         </figure>
                         <figure class="media-card rounded-xl h-28">
-                            <img class="pos-mid" src="images/eduflair-life-2.jpeg" alt="Students celebrating at an Eduflair campus event" width="400" height="250">
+                            <img class="pos-mid" src="images/class-smiles.webp" alt="Students celebrating at an Eduflair campus event" width="1800" height="1200">
                         </figure>
                     </div>
                 </div>
@@ -298,7 +301,7 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <article id="course" class="reveal reveal-d1 lift bg-white border border-sand-200 rounded-2xl overflow-hidden">
                         <figure class="media-card h-40 sm:h-44">
-                            <img class="pos-mid" src="images/eduflair-life-8.jpeg" alt="A1–B2 German class at Eduflair" width="400" height="250">
+                            <img class="pos-mid" src="images/class-lecture.webp" alt="A1–B2 German class at Eduflair" width="1800" height="1200" loading="lazy">
                         </figure>
                         <div class="p-7 sm:p-9">
                         <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700 mb-3">Path 1</p>
@@ -314,7 +317,7 @@
                     </article>
                     <article id="processing" class="reveal reveal-d2 lift bg-brand-900 text-white rounded-2xl overflow-hidden">
                         <figure class="media-card h-40 sm:h-44">
-                            <img src="images/DSC06788.JPG" alt="Ausbildung processing desk at Eduflair" width="800" height="500">
+                            <img src="images/campus-front.webp" alt="Eduflair campus in Calicut — Ausbildung course processing" width="1600" height="959" loading="lazy">
                         </figure>
                         <div class="p-7 sm:p-9">
                         <p class="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-300 mb-3">Path 2</p>
@@ -341,22 +344,22 @@
                 </div>
                 <div class="reveal grid grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
                     <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-low" src="images/yt-gradiesta-procession.jpg" alt="German graduates walking in at Gradiesta" width="1280" height="720" loading="lazy">
+                        <img class="pos-mid" src="images/class-worldmap.webp" alt="German language classroom at Eduflair Calicut" width="1800" height="1273" loading="lazy">
                     </figure>
                     <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-mid" src="images/yt-orientation-audience.jpg" alt="Families at Eduflair’s German language orientation" width="1280" height="720" loading="lazy">
+                        <img class="pos-mid" src="images/class-group.webp" alt="Students working together in an Eduflair German class" width="1800" height="1273" loading="lazy">
                     </figure>
                     <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-mid" src="images/yt-graduates-group.jpg" alt="Eduflair German graduates after the ceremony" width="1280" height="720" loading="lazy">
+                        <img class="pos-mid" src="images/campus-corner.webp" alt="Eduflair campus building in Calicut" width="1336" height="800" loading="lazy">
                     </figure>
                     <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-mid" src="images/eduflair-life-4.jpeg" alt="Students and faculty at a campus gathering" width="400" height="250" loading="lazy">
+                        <img class="pos-mid" src="images/class-facing.webp" alt="Students in a German batch on the Calicut campus" width="1800" height="1200" loading="lazy">
                     </figure>
                     <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-low" src="images/yt-gradiesta-graduates.jpg" alt="Ausbildung students in graduation gowns at Gradiesta" width="1280" height="720" loading="lazy">
+                        <img class="pos-mid" src="images/class-lecture.webp" alt="German lecture in an Eduflair classroom" width="1800" height="1200" loading="lazy">
                     </figure>
                     <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-top" src="images/eduflair-life-6.jpeg" alt="German language orientation on the Calicut campus" width="400" height="250" loading="lazy">
+                        <img class="pos-mid" src="images/class-smiles.webp" alt="Ausbildung students studying German at Eduflair" width="1800" height="1200" loading="lazy">
                     </figure>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -424,7 +427,7 @@
             <div class="max-w-6xl mx-auto px-4">
                 <h2 class="reveal text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">Students who trained here</h2>
                 <figure class="reveal media-card rounded-2xl h-48 sm:h-72 mb-8">
-                    <img class="pos-mid" src="images/yt-gradiesta-hall.jpg" alt="Eduflair German graduates at Gradiesta" width="1280" height="720" loading="lazy">
+                    <img class="pos-mid" src="images/class-worldmap.webp" alt="Students who trained in German at Eduflair Calicut" width="1800" height="1273" loading="lazy">
                 </figure>
                 <div class="grid md:grid-cols-3 gap-5">
                     <blockquote class="reveal reveal-d1 quote-card border border-sand-200 rounded-2xl p-6 sm:p-7 flex flex-col">
