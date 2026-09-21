@@ -13,7 +13,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn German (A1–B2) at Eduflair Calicut, then process your Ausbildung student course in Germany — a vocational programme with a monthly stipend. Already certified? Skip class and start processing.">
+    <meta name="description" content="Learn German (A1–B2) at Eduflair, then process your Ausbildung student course in Germany — a vocational programme with a monthly stipend. Already B2 certified? Skip class and start processing.">
     <title>German Language &amp; Ausbildung Course Processing | Eduflair</title>
 
     <link rel="icon" href="https://eduflair.com/favicon.png" sizes="32x32" />
@@ -32,9 +32,10 @@
                     fontFamily: { sans: ['Open Sans', 'system-ui', 'sans-serif'] },
                     fontWeight: { medium: '700', semibold: '700', bold: '700', extrabold: '800' },
                     colors: {
-                        ink: '#101828',
-                        brand: { 50: '#E8F5EE', 100: '#C5E6D4', 500: '#1F7A4D', 600: '#166534', 700: '#14532D', 900: '#0B3B24' },
-                        sand: { 50: '#FAFAF8', 100: '#F4F1EA', 200: '#E7E1D4' }
+                        gold: '#FDB730',
+                        cerulean: '#1781A2',
+                        sherpa: '#003B49',
+                        grey: '#808080'
                     }
                 }
             }
@@ -50,20 +51,20 @@
         .faq-plus { transition: transform 0.2s ease; }
         .path-card {
             background-color: #fff;
-            border-color: #E7E1D4;
+            border-color: rgba(23, 129, 162, 0.22);
             transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
         .path-card:hover {
             transform: translateY(-3px);
-            border-color: #166534;
-            box-shadow: 0 12px 28px -18px rgba(11, 59, 36, 0.45);
+            border-color: #1781A2;
+            box-shadow: 0 12px 28px -18px rgba(0, 59, 73, 0.45);
         }
         .path-card.is-on {
-            border-color: #0B3B24 !important;
-            background-color: #E8F5EE !important;
-            box-shadow: inset 0 0 0 1px #0B3B24, 0 10px 24px -18px rgba(11, 59, 36, 0.35);
+            border-color: #003B49 !important;
+            background-color: rgba(23, 129, 162, 0.1) !important;
+            box-shadow: inset 0 0 0 1px #003B49, 0 10px 24px -18px rgba(0, 59, 73, 0.35);
         }
-        .path-card:has(input:focus-visible) { outline: 2px solid #166534; outline-offset: 2px; }
+        .path-card:has(input:focus-visible) { outline: 2px solid #1781A2; outline-offset: 2px; }
         @keyframes rise-in {
             from { opacity: 0; transform: translateY(14px); }
             to { opacity: 1; transform: none; }
@@ -79,21 +80,21 @@
         .lift { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
         .lift:hover {
             transform: translateY(-4px);
-            box-shadow: 0 16px 34px -20px rgba(11, 59, 36, 0.42);
-            border-color: #C5E6D4;
+            box-shadow: 0 16px 34px -20px rgba(0, 59, 73, 0.42);
+            border-color: rgba(23, 129, 162, 0.35);
         }
         .btn-live { transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease; }
-        .btn-live:hover { transform: translateY(-2px); box-shadow: 0 12px 22px -12px rgba(11, 59, 36, 0.5); }
+        .btn-live:hover { transform: translateY(-2px); box-shadow: 0 12px 22px -12px rgba(253, 183, 48, 0.55); }
         .nav-link { position: relative; transition: color 0.18s ease; }
         .nav-link::after {
             content: '';
             position: absolute;
             left: 0; bottom: -5px;
             width: 0; height: 1.5px;
-            background: #14532D;
+            background: #FDB730;
             transition: width 0.18s ease;
         }
-        .nav-link:hover { color: #14532D; }
+        .nav-link:hover { color: #1781A2; }
         .nav-link:hover::after { width: 100%; }
         .stat-chip { transition: transform 0.18s ease; }
         .stat-chip:hover { transform: translateY(-3px); }
@@ -107,30 +108,32 @@
         .media-card img.pos-low { object-position: center 68%; }
         .media-card:hover img { transform: scale(1.06); }
         .social-icon {
-            color: #E8F5EE;
+            color: rgba(255, 255, 255, 0.88);
             transition: color 0.18s ease, transform 0.18s ease;
         }
-        .social-icon:hover { color: #FFCC00; transform: translateY(-2px); }
+        .social-icon:hover { color: #FDB730; transform: translateY(-2px); }
         .quote-card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
         .quote-card:hover {
             transform: translateY(-4px);
-            border-color: #C5E6D4;
-            box-shadow: 0 16px 34px -20px rgba(11, 59, 36, 0.4);
+            border-color: rgba(23, 129, 162, 0.4);
+            box-shadow: 0 16px 34px -20px rgba(0, 59, 73, 0.4);
         }
         details summary { transition: color 0.18s ease; }
-        details summary:hover { color: #14532D; }
-        #hero-gl {
-            position: absolute; inset: 0; width: 100%; height: 100%;
-            pointer-events: none; opacity: 0;
-            transition: opacity 0.6s ease;
+        details summary:hover { color: #1781A2; }
+        .hero-grid {
+            background-image:
+                radial-gradient(ellipse 80% 60% at 10% 0%, rgba(23, 129, 162, 0.28), transparent 55%),
+                radial-gradient(ellipse 50% 40% at 100% 20%, rgba(253, 183, 48, 0.12), transparent 50%),
+                linear-gradient(180deg, #003B49 0%, #003B49 55%, #025264 100%);
         }
-        #hero-gl.is-live { opacity: 0.7; }
-        .hero-gl-fallback {
-            position: absolute; inset: 0; pointer-events: none;
-            background:
-                radial-gradient(ellipse at 18% 28%, rgba(232, 245, 238, 0.95) 0%, transparent 52%),
-                radial-gradient(ellipse at 82% 78%, rgba(197, 230, 212, 0.7) 0%, transparent 46%);
+        .pulse-line {
+            stroke-dasharray: 8 6;
+            animation: dash 18s linear infinite;
         }
+        @keyframes dash { to { stroke-dashoffset: -280; } }
+        #hero-stage { position: absolute; inset: 0; pointer-events: none; }
+        #hero-gl { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity 0.7s ease; }
+        #hero-gl.is-live { opacity: 1; }
         #whatsapp-fab { transition: transform 0.2s ease, bottom 0.25s ease; }
         #whatsapp-fab:hover { transform: scale(1.06); }
         @media (hover: none) {
@@ -144,7 +147,7 @@
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             .hero-in, .hero-in-2, .hero-in-3, .reveal, .path-card, .lift, .btn-live, #whatsapp-fab, .faq-plus,
-            .nav-link, .stat-chip, .media-card img, .quote-card, .social-icon {
+            .nav-link, .stat-chip, .media-card img, .quote-card, .social-icon, .pulse-line {
                 animation: none !important;
                 transition: none !important;
             }
@@ -156,102 +159,106 @@
     </style>
 </head>
 
-<body class="bg-sand-50 text-ink antialiased font-sans font-bold pb-24 md:pb-0">
+<body class="bg-[#F4F7F8] text-sherpa antialiased font-sans font-bold pb-24 md:pb-0">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7VXCBQ9"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="h-1 w-full grid grid-cols-3">
         <div class="bg-black"></div>
         <div class="bg-[#DD0000]"></div>
-        <div class="bg-[#FFCC00]"></div>
+        <div class="bg-gold"></div>
     </div>
 
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-sand-200">
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-cerulean/15">
         <div class="max-w-6xl mx-auto px-4 h-16 sm:h-[4.25rem] flex items-center justify-between gap-3">
             <a href="#apply" class="flex items-center gap-3 min-w-0 flex-shrink-0">
                 <img src="images/logo-black.png" class="h-8 sm:h-10 w-auto" alt="Eduflair">
-                <img src="images/worlds-largest-language-campus.webp" alt="World's largest language campus" width="1024" height="193" class="hidden sm:block h-7 sm:h-8 w-auto border-l border-sand-200 pl-3">
+                <img src="images/worlds-largest-language-campus.webp" alt="World's largest language campus" width="1024" height="193" class="hidden sm:block h-7 sm:h-8 w-auto border-l border-cerulean/25 pl-3">
             </a>
-            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
-                <a href="#course" class="nav-link">German course</a>
-                <a href="#processing" class="nav-link">Course processing</a>
-                <a href="#stories" class="nav-link">Stories</a>
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-grey">
+                <a href="#course" class="nav-link">Learn German</a>
+                <a href="#processing" class="nav-link">Ausbildung processing</a>
+                <a href="#stories" class="nav-link">Campus stories</a>
             </nav>
-            <a href="#apply" class="btn-live inline-flex items-center justify-center flex-shrink-0 bg-brand-900 text-white text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2.5 rounded-lg hover:bg-brand-700">
-                <span class="sm:hidden">Counseling</span>
-                <span class="hidden sm:inline">Free counseling</span>
+            <a href="#apply" class="btn-live inline-flex items-center justify-center flex-shrink-0 bg-gold text-sherpa text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2.5 rounded-lg hover:bg-[#e8a520] shadow-lg shadow-gold/30">
+                <span class="sm:hidden">Counselling</span>
+                <span class="hidden sm:inline">Free counselling</span>
             </a>
         </div>
     </header>
 
     <main>
         <!-- Hero + form -->
-        <section id="hero-stage" class="relative overflow-hidden bg-white border-b border-sand-200">
-            <div class="hero-gl-fallback" aria-hidden="true"></div>
-            <canvas id="hero-gl" aria-hidden="true"></canvas>
+        <section class="hero-grid text-white relative overflow-hidden">
+            <div id="hero-stage" aria-hidden="true">
+                <canvas id="hero-gl"></canvas>
+            </div>
+            <svg class="absolute inset-x-0 bottom-10 w-full h-16 opacity-20 pointer-events-none" viewBox="0 0 1200 80" fill="none" aria-hidden="true">
+                <path class="pulse-line" d="M0 40 H180 L200 40 L220 12 L240 68 L270 40 H520 L540 40 L560 18 L580 62 L610 40 H900 L920 40 L940 8 L960 72 L990 40 H1200" stroke="#FDB730" stroke-width="2"/>
+            </svg>
             <div class="relative z-10 max-w-6xl mx-auto px-4 py-10 sm:py-14 lg:py-20 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                 <div class="lg:col-span-6 hero-in">
-                    <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-700 mb-5">
-                        Calicut · German A1–B2 · Ausbildung
+                    <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-gold mb-5">
+                        German A1–B2 · Ausbildung
                     </p>
                     <h1 class="text-[1.85rem] sm:text-4xl lg:text-[2.35rem] font-extrabold leading-[1.2] tracking-tight mb-5 max-w-lg">
                         Study in Germany — with a stipend.
                     </h1>
-                    <p class="text-base text-slate-600 leading-relaxed mb-8 max-w-md">
-                        You go as a student on a vocational course. Need German first? Learn A1–B2 here. Already certified? We process your course and visa.
+                    <p class="text-base text-white/80 leading-relaxed mb-8 max-w-md">
+                        You go as a student on a vocational course. Need German first? Learn A1–B2 here. Already B2 certified? We process your course and visa.
                     </p>
                     <div class="hidden sm:flex gap-8 mb-8">
                         <div class="stat-chip">
-                            <p class="font-extrabold text-brand-900 text-xl">A1–B2</p>
-                            <p class="text-xs text-slate-500 mt-1">German in Calicut</p>
+                            <p class="font-extrabold text-gold text-xl">A1–B2</p>
+                            <p class="text-xs text-white/70 mt-1">Study German at Eduflair</p>
                         </div>
                         <div class="stat-chip">
-                            <p class="font-extrabold text-brand-900 text-xl">€1,200+</p>
-                            <p class="text-xs text-slate-500 mt-1">Monthly stipend</p>
+                            <p class="font-extrabold text-gold text-xl">€1,500+</p>
+                            <p class="text-xs text-white/70 mt-1">Monthly stipend</p>
                         </div>
                         <div class="stat-chip">
-                            <p class="font-extrabold text-brand-900 text-xl">No tuition</p>
-                            <p class="text-xs text-slate-500 mt-1">Course is funded</p>
+                            <p class="font-extrabold text-gold text-xl">No Tuition</p>
+                            <p class="text-xs text-white/70 mt-1">Education is free in Germany</p>
                         </div>
                     </div>
                     <div class="hidden sm:grid grid-cols-2 gap-3 max-w-md">
-                        <figure class="media-card rounded-xl h-28">
-                            <img src="images/class-facing.webp" alt="German class at Eduflair Calicut" width="1800" height="1200">
+                        <figure class="media-card rounded-xl h-28 border border-white/15">
+                            <img src="images/class-facing.webp" alt="German class at Eduflair" width="1800" height="1200">
                         </figure>
-                        <figure class="media-card rounded-xl h-28">
+                        <figure class="media-card rounded-xl h-28 border border-white/15">
                             <img class="pos-mid" src="images/class-smiles.webp" alt="Students celebrating at an Eduflair campus event" width="1800" height="1200">
                         </figure>
                     </div>
                 </div>
 
                 <div class="lg:col-span-6 hero-in-2" id="apply">
-                    <div class="relative bg-white/95 backdrop-blur border border-sand-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700 mb-2">Free counseling</p>
+                    <div class="relative bg-white text-sherpa backdrop-blur border border-cerulean/15 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-black/30">
+                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-cerulean mb-2">Free counselling</p>
                         <h2 class="text-xl font-bold mb-1">Where are you starting?</h2>
-                        <p class="text-sm text-slate-500 mb-6">Pick a path. We’ll call you in Calicut.</p>
+                        <p class="text-sm text-grey mb-6">Pick a path. Our counsellors will guide you.</p>
 
                         <form data-lead-form class="space-y-4">
                             <fieldset>
                                 <legend class="sr-only">Your path</legend>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <label class="path-card cursor-pointer rounded-xl border-2 border-sand-200 bg-white px-4 py-4 flex flex-col justify-center min-h-[4.5rem]">
+                                    <label class="path-card cursor-pointer rounded-xl border-2 px-4 py-4 flex flex-col justify-center min-h-[4.5rem]">
                                         <input type="radio" name="path" value="language" class="sr-only" required>
                                         <span class="font-bold">I need German</span>
-                                        <span class="text-sm text-slate-500 mt-0.5">A1–B2 at Eduflair</span>
+                                        <span class="text-sm text-grey mt-0.5">A1–B2 at Eduflair</span>
                                     </label>
-                                    <label class="path-card cursor-pointer rounded-xl border-2 border-sand-200 bg-white px-4 py-4 flex flex-col justify-center min-h-[4.5rem]">
+                                    <label class="path-card cursor-pointer rounded-xl border-2 px-4 py-4 flex flex-col justify-center min-h-[4.5rem]">
                                         <input type="radio" name="path" value="processing" class="sr-only" required>
-                                        <span class="font-bold">Already certified</span>
-                                        <span class="text-sm text-slate-500 mt-0.5">Skip to processing</span>
+                                        <span class="font-bold">Already B2 Certified</span>
+                                        <span class="text-sm text-grey mt-0.5">Skip to processing</span>
                                     </label>
                                 </div>
                             </fieldset>
 
-                            <p id="path-hint" class="hidden text-sm font-medium text-brand-800 bg-brand-50 rounded-lg px-3 py-2"></p>
+                            <p id="path-hint" class="hidden text-sm font-medium text-sherpa bg-cerulean/10 rounded-lg px-3 py-2"></p>
 
                             <div id="level-wrap" class="hidden">
                                 <label for="german_level" class="block text-sm font-medium mb-1">Current German level</label>
-                                <select id="german_level" name="german_level" class="w-full px-4 py-3 rounded-xl border border-sand-200 bg-white text-base focus:outline-none focus:ring-2 focus:ring-brand-600">
+                                <select id="german_level" name="german_level" class="w-full px-4 py-3 rounded-xl border border-cerulean/20 bg-white text-base focus:outline-none focus:ring-2 focus:ring-cerulean">
                                     <option value="">Select level</option>
                                     <option value="B1">B1</option>
                                     <option value="B2">B2</option>
@@ -263,28 +270,28 @@
                             <div>
                                 <label for="name" class="block text-sm font-medium mb-1">Full name</label>
                                 <input type="text" id="name" name="name" required autocomplete="name"
-                                    class="w-full px-4 py-3 rounded-xl border border-sand-200 bg-white text-base focus:outline-none focus:ring-2 focus:ring-brand-600"
+                                    class="w-full px-4 py-3 rounded-xl border border-cerulean/20 bg-white text-base focus:outline-none focus:ring-2 focus:ring-cerulean"
                                     placeholder="Your full name">
                             </div>
                             <div>
                                 <label for="location" class="block text-sm font-medium mb-1">City</label>
                                 <input type="text" id="location" name="location" required autocomplete="address-level2"
-                                    class="w-full px-4 py-3 rounded-xl border border-sand-200 bg-white text-base focus:outline-none focus:ring-2 focus:ring-brand-600"
-                                    placeholder="Calicut">
+                                    class="w-full px-4 py-3 rounded-xl border border-cerulean/20 bg-white text-base focus:outline-none focus:ring-2 focus:ring-cerulean"
+                                    placeholder="Your city">
                             </div>
                             <div>
                                 <label for="phone" class="block text-sm font-medium mb-1">Phone</label>
                                 <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-500 font-medium">+91</span>
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-grey font-medium">+91</span>
                                     <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric" autocomplete="tel-national"
-                                        class="w-full pl-12 pr-4 py-3 rounded-xl border border-sand-200 bg-white text-base focus:outline-none focus:ring-2 focus:ring-brand-600"
-                                        placeholder="98765 43210" title="Please enter exactly 10 digits">
+                                        class="w-full pl-12 pr-4 py-3 rounded-xl border border-cerulean/20 bg-white text-base focus:outline-none focus:ring-2 focus:ring-cerulean"
+                                        placeholder="8352 01 01 01" title="Please enter exactly 10 digits">
                                 </div>
                             </div>
-                            <button type="submit" class="btn-live w-full bg-brand-900 text-white font-bold text-base px-6 py-3.5 rounded-xl hover:bg-brand-700">
-                                Book free counseling
+                            <button type="submit" class="btn-live w-full bg-gold text-sherpa font-bold text-base px-6 py-3.5 rounded-xl hover:bg-[#e8a520] shadow-lg shadow-gold/30">
+                                Book free counselling
                             </button>
-                            <p class="text-center text-xs text-slate-500">No payment now. A counselor calls you to map the next step.</p>
+                            <p class="text-center text-xs text-grey">No payment now. A counsellor calls you to map the next step.</p>
                         </form>
                     </div>
                 </div>
@@ -294,161 +301,141 @@
         <!-- Two paths explained -->
         <section class="py-16 sm:py-24">
             <div class="max-w-6xl mx-auto px-4">
-                <div class="reveal mb-10 max-w-xl">
-                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">Two starting points. One student course.</h2>
-                    <p class="text-slate-600">Ausbildung is a vocational course with a stipend. Learn German with us first — or skip ahead if you already have B1/B2.</p>
+                <div class="reveal mb-10 max-w-3xl">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">How do I get started?</h2>
+                    <p class="text-grey">Ausbildung is a free vocational course in Germany with a stipend. Learn German with us first – or skip ahead if you already have B2.</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-6">
-                    <article id="course" class="reveal reveal-d1 lift bg-white border border-sand-200 rounded-2xl overflow-hidden">
+                    <article id="course" class="reveal reveal-d1 lift bg-white border border-cerulean/15 rounded-2xl overflow-hidden">
                         <figure class="media-card h-40 sm:h-44">
-                            <img class="pos-mid" src="images/class-lecture.webp" alt="A1–B2 German class at Eduflair" width="1800" height="1200" loading="lazy">
+                            <img class="pos-mid" src="images/class-group.webp" alt="German class at the World's Largest Language Campus" width="1800" height="1273" loading="lazy">
                         </figure>
                         <div class="p-7 sm:p-9">
-                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-brand-700 mb-3">Path 1</p>
-                        <h3 class="text-xl font-bold mb-2">Need German? Start in Calicut.</h3>
-                        <p class="text-slate-600 mb-6">A1–B2 on campus, built for Ausbildung. Then the same team processes your student course and visa.</p>
-                        <ul class="space-y-3 text-slate-700">
-                            <li>Two trainers per class · Saturday tests</li>
-                            <li>Mock interviews in German</li>
-                            <li>About 8 months to B2</li>
+                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-cerulean mb-3">Path 1</p>
+                        <h3 class="text-xl font-bold mb-2">Need German? Start at the World's Largest Language Campus.</h3>
+                        <p class="text-grey mb-6">A1–B2 on campus, built for Ausbildung. Then our expert processing team handles your Ausbildung processing and visa application.</p>
+                        <ul class="space-y-3 text-sherpa">
+                            <li>C1–C2 Qualified Faculties</li>
+                            <li>Assistant Faculty Support</li>
+                            <li>Smart Teaching Infrastructure</li>
+                            <li>Exclusive ELS Program</li>
+                            <li>Free Exam Preparation &amp; Practice Sessions</li>
                         </ul>
-                        <a href="#apply" data-select-path="language" class="mt-7 inline-flex font-semibold text-brand-700 hover:text-brand-900">Start with German →</a>
+                        <div class="mt-6 rounded-xl bg-[#F4F7F8] border border-cerulean/15 p-4 text-sm text-sherpa">
+                            <p><strong>Eligibility:</strong> 55%+ in 12th · Age limit 18-23 · B2 German (we teach it if you don’t have it).</p>
+                        </div>
+                        <a href="#apply" data-select-path="language" class="mt-7 inline-flex font-semibold text-cerulean hover:text-sherpa">Start with German →</a>
                         </div>
                     </article>
-                    <article id="processing" class="reveal reveal-d2 lift bg-brand-900 text-white rounded-2xl overflow-hidden">
+                    <article id="processing" class="reveal reveal-d2 lift bg-sherpa text-white rounded-2xl overflow-hidden">
                         <figure class="media-card h-40 sm:h-44">
-                            <img src="images/campus-front.webp" alt="Eduflair campus in Calicut — Ausbildung course processing" width="1600" height="959" loading="lazy">
+                            <img class="pos-mid" src="images/class-worldmap.webp" alt="Ausbildung processing classroom at Eduflair" width="1800" height="1273" loading="lazy">
                         </figure>
                         <div class="p-7 sm:p-9">
-                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-300 mb-3">Path 2</p>
-                        <h3 class="text-xl font-bold mb-2">Already certified? Skip class.</h3>
-                        <p class="text-emerald-100 mb-6">We place you on an Ausbildung course, file the student visa, and get you to Germany as a trainee on a stipend.</p>
-                        <ul class="space-y-3 text-emerald-50">
-                            <li>Course match: nursing, IT, trades, hotel</li>
-                            <li>Interviews, documents, student visa</li>
-                            <li>About 6 months processing after B2</li>
+                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-gold mb-3">Path 2</p>
+                        <h3 class="text-xl font-bold mb-2">Already German B2 certified?</h3>
+                        <p class="text-white/85 mb-4">We help you select the Ausbildung course right for you, handle documentation and visa processing, and get you to Germany to build your dream career.</p>
+                        <ul class="space-y-3 text-white/90">
+                            <li>Trades available: Nursing, IT, Mechatronics, Logistics, Hotel management and many more.</li>
+                            <li>Language assessment, Interview prep, Documentation and visa processing</li>
+                            <li>Proven track record of 100% visa success rate.</li>
                         </ul>
-                        <a href="#apply" data-select-path="processing" class="mt-7 inline-flex font-semibold text-emerald-200 hover:text-white">Start processing →</a>
+                        <div class="mt-6 rounded-xl bg-white/10 border border-white/15 p-4 text-sm text-white/90">
+                            <p><strong>Eligibility:</strong> 55%+ in 12th · Age limit 18-23 · German B2 certified.</p>
+                        </div>
+                        <a href="#apply" data-select-path="processing" class="mt-7 inline-flex font-semibold text-gold hover:text-white">Start processing →</a>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Course depth -->
-        <section class="py-16 sm:py-24 bg-white border-y border-sand-200">
+        <!-- Why Ausbildung -->
+        <section class="py-16 sm:py-24 bg-white border-y border-cerulean/15">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="reveal max-w-xl mb-10">
-                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">German here. Processing here.</h2>
-                    <p class="text-slate-600">One campus in Calicut — language, course placement, and student visa. No hand-off to another institute.</p>
-                </div>
-                <div class="reveal grid grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-                    <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-mid" src="images/class-worldmap.webp" alt="German language classroom at Eduflair Calicut" width="1800" height="1273" loading="lazy">
-                    </figure>
-                    <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-mid" src="images/class-group.webp" alt="Students working together in an Eduflair German class" width="1800" height="1273" loading="lazy">
-                    </figure>
-                    <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-mid" src="images/campus-corner.webp" alt="Eduflair campus building in Calicut" width="1336" height="800" loading="lazy">
-                    </figure>
-                    <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-mid" src="images/class-facing.webp" alt="Students in a German batch on the Calicut campus" width="1800" height="1200" loading="lazy">
-                    </figure>
-                    <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-mid" src="images/class-lecture.webp" alt="German lecture in an Eduflair classroom" width="1800" height="1200" loading="lazy">
-                    </figure>
-                    <figure class="media-card rounded-2xl h-36 sm:h-48">
-                        <img class="pos-mid" src="images/class-smiles.webp" alt="Ausbildung students studying German at Eduflair" width="1800" height="1200" loading="lazy">
-                    </figure>
-                </div>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    <div class="reveal reveal-d1 lift rounded-2xl bg-sand-100 p-6">
-                        <p class="font-bold mb-2">A1–B2 for Ausbildung</p>
-                        <p class="text-sm text-slate-600">Workplace German, not tourist phrases.</p>
-                    </div>
-                    <div class="reveal reveal-d2 lift rounded-2xl bg-sand-100 p-6">
-                        <p class="font-bold mb-2">Two trainers / class</p>
-                        <p class="text-sm text-slate-600">More speaking time, closer correction.</p>
-                    </div>
-                    <div class="reveal reveal-d3 lift rounded-2xl bg-sand-100 p-6">
-                        <p class="font-bold mb-2">Saturday tests</p>
-                        <p class="text-sm text-slate-600">Weekly checks plus exam-month drills.</p>
-                    </div>
-                    <div class="reveal reveal-d3 lift rounded-2xl bg-sand-100 p-6">
-                        <p class="font-bold mb-2">RP Mall, Calicut</p>
-                        <p class="text-sm text-slate-600">AC rooms on Mavoor Road.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Processing outcomes -->
-        <section class="py-16 sm:py-24">
-            <div class="max-w-6xl mx-auto px-4">
-                <div class="reveal max-w-xl mb-10">
-                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">What you get as a student</h2>
-                    <p class="text-slate-600">Ausbildung is a vocational course. You train on a stipend. A full-time role comes after you graduate — not day one.</p>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Why you should choose Ausbildung</h2>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <div class="reveal reveal-d1 lift bg-white border border-sand-200 rounded-2xl p-6 sm:p-7">
+                    <div class="reveal reveal-d1 lift bg-[#F4F7F8] border border-cerulean/15 rounded-2xl p-6 sm:p-7">
                         <p class="font-bold mb-2">Stipend while you train</p>
-                        <p class="text-sm text-slate-600">About €1,200–€1,700 a month during the course.</p>
+                        <p class="text-sm text-grey">€1,500–€1,900 a month during the course.</p>
                     </div>
-                    <div class="reveal reveal-d2 lift bg-white border border-sand-200 rounded-2xl p-6 sm:p-7">
+                    <div class="reveal reveal-d2 lift bg-[#F4F7F8] border border-cerulean/15 rounded-2xl p-6 sm:p-7">
                         <p class="font-bold mb-2">Tuition covered</p>
-                        <p class="text-sm text-slate-600">The training company funds the programme.</p>
+                        <p class="text-sm text-grey">Germany offers free education so you do not have to pay any tuition fees.</p>
                     </div>
-                    <div class="reveal reveal-d3 lift bg-white border border-sand-200 rounded-2xl p-6 sm:p-7">
-                        <p class="font-bold mb-2">Job after you graduate</p>
-                        <p class="text-sm text-slate-600">Most stay on with the same company. Typical start €2,800+.</p>
+                    <div class="reveal reveal-d3 lift bg-[#F4F7F8] border border-cerulean/15 rounded-2xl p-6 sm:p-7">
+                        <p class="font-bold mb-2">Job after you complete Ausbildung</p>
+                        <p class="text-sm text-grey">Most stay on with the same company. Typical starting salary €2,800+.</p>
                     </div>
-                    <div class="reveal reveal-d1 lift bg-white border border-sand-200 rounded-2xl p-6 sm:p-7">
-                        <p class="font-bold mb-2">PR later</p>
-                        <p class="text-sm text-slate-600">After the course and about two years of work, graduates can apply.</p>
+                    <div class="reveal reveal-d1 lift bg-[#F4F7F8] border border-cerulean/15 rounded-2xl p-6 sm:p-7">
+                        <p class="font-bold mb-2">PR and citizenship pathway</p>
+                        <p class="text-sm text-grey">PR eligibility in 5 years and citizenship eligibility in 10 years.</p>
                     </div>
-                    <div class="reveal reveal-d2 lift bg-white border border-sand-200 rounded-2xl p-6 sm:p-7">
+                    <div class="reveal reveal-d2 lift bg-[#F4F7F8] border border-cerulean/15 rounded-2xl p-6 sm:p-7">
                         <p class="font-bold mb-2">No blocked account</p>
-                        <p class="text-sm text-slate-600">Unlike university, Ausbildung does not need one.</p>
+                        <p class="text-sm text-grey">Unlike university, Ausbildung does not need one.</p>
                     </div>
-                    <div class="reveal reveal-d3 lift bg-white border border-sand-200 rounded-2xl p-6 sm:p-7">
+                    <div class="reveal reveal-d3 lift bg-[#F4F7F8] border border-cerulean/15 rounded-2xl p-6 sm:p-7">
                         <p class="font-bold mb-2">In-demand fields</p>
-                        <p class="text-sm text-slate-600">Nursing, IT, mechatronics, hotel, logistics, trades.</p>
+                        <p class="text-sm text-grey">Nursing, IT, mechatronics, hotel mgt, logistics, trades.</p>
                     </div>
-                </div>
-                <div class="reveal mt-10 bg-sand-100 rounded-2xl p-6 sm:p-7 text-sm text-slate-700">
-                    <p><strong>Eligibility:</strong> 55%+ in 12th · usually 18–23 · B2 German (we teach it if you don’t have it).</p>
                 </div>
             </div>
         </section>
 
         <!-- Stories -->
-        <section id="stories" class="py-16 sm:py-24 bg-white border-y border-sand-200">
+        <section id="stories" class="py-16 sm:py-24">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="reveal text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">Students who trained here</h2>
+                <h2 class="reveal text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">Hear from our students</h2>
                 <figure class="reveal media-card rounded-2xl h-48 sm:h-72 mb-8">
-                    <img class="pos-mid" src="images/class-worldmap.webp" alt="Students who trained in German at Eduflair Calicut" width="1800" height="1273" loading="lazy">
+                    <img class="pos-top" src="images/yt-graduates-group.jpg" alt="Eduflair graduates at Gradiesta" width="1920" height="1080" loading="lazy">
                 </figure>
                 <div class="grid md:grid-cols-3 gap-5">
-                    <blockquote class="reveal reveal-d1 quote-card border border-sand-200 rounded-2xl p-6 sm:p-7 flex flex-col">
-                        <p class="text-slate-700 leading-relaxed flex-1">“A1 to B2 at Eduflair. Processing was clear. Offer letter in 3 months — then Germany.”</p>
-                        <footer class="mt-6 pt-4 border-t border-sand-200">
+                    <blockquote class="reveal reveal-d1 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
+                        <p class="text-sherpa leading-relaxed flex-1">“A1 to B2 at Eduflair. Processing was clear. Offer letter in 3 months — then Germany.”</p>
+                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
                             <p class="font-bold">Nandana Sivadasan</p>
-                            <p class="text-sm text-brand-700">B2 here · now in Germany</p>
+                            <p class="text-sm text-cerulean">B2 here · now in Germany</p>
                         </footer>
                     </blockquote>
-                    <blockquote class="reveal reveal-d2 quote-card border border-sand-200 rounded-2xl p-6 sm:p-7 flex flex-col">
-                        <p class="text-slate-700 leading-relaxed flex-1">“I came after B2. Offer letter in 3 months. On 20 August I flew to Germany.”</p>
-                        <footer class="mt-6 pt-4 border-t border-sand-200">
+                    <blockquote class="reveal reveal-d2 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
+                        <p class="text-sherpa leading-relaxed flex-1">“I came after B2. Offer letter in 3 months. On 20 August I flew to Germany.”</p>
+                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
                             <p class="font-bold">Anju Joby</p>
-                            <p class="text-sm text-brand-700">Already certified</p>
+                            <p class="text-sm text-cerulean">Already B2 certified</p>
                         </footer>
                     </blockquote>
-                    <blockquote class="reveal reveal-d3 quote-card border border-sand-200 rounded-2xl p-6 sm:p-7 flex flex-col">
-                        <p class="text-slate-700 leading-relaxed flex-1">“Classes and teachers were strong. Processing took 6 months. I’m in Germany now.”</p>
-                        <footer class="mt-6 pt-4 border-t border-sand-200">
+                    <blockquote class="reveal reveal-d3 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
+                        <p class="text-sherpa leading-relaxed flex-1">“Classes and teachers were strong. Processing took 6 months. I’m in Germany now.”</p>
+                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
                             <p class="font-bold">Fiyona Sara Binu</p>
-                            <p class="text-sm text-brand-700">Language + processing</p>
+                            <p class="text-sm text-cerulean">Language + processing</p>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="reveal reveal-d1 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
+                        <p class="text-gold text-sm tracking-wide mb-3" aria-hidden="true">★★★★★</p>
+                        <p class="text-sherpa leading-relaxed flex-1">“I learned German language with Eduflair, and currently I am in Germany — successfully achieved what I wanted. Literally satisfied with everything Eduflair did, including their flexible studying method, exam preparation and fast processing.”</p>
+                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
+                            <p class="font-bold">Student review</p>
+                            <p class="text-sm text-cerulean">Published on eduflair.com</p>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="reveal reveal-d2 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
+                        <p class="text-gold text-sm tracking-wide mb-3" aria-hidden="true">★★★★★</p>
+                        <p class="text-sherpa leading-relaxed flex-1">“Hade a nice experience with Eduflair team. I have completed my A1 to B2 studies in Eduflair. Soon after my B2 completion I started my processing. Jumana ma'am was our processing consultant and she was very helpful and guided me through all the process. Highly recommended!”</p>
+                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
+                            <p class="font-bold">Student review</p>
+                            <p class="text-sm text-cerulean">Published on eduflair.com</p>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="reveal reveal-d3 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
+                        <p class="text-gold text-sm tracking-wide mb-3" aria-hidden="true">★★★★★</p>
+                        <p class="text-sherpa leading-relaxed flex-1">“EDUFLAIR Learning Solutions provides excellent coaching at a reasonable price. The affordable fees make it accessible for all. Great value for money!”</p>
+                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
+                            <p class="font-bold">Gopika Mekkayil</p>
+                            <p class="text-sm text-cerulean">Justdial review</p>
                         </footer>
                     </blockquote>
                 </div>
@@ -456,71 +443,56 @@
         </section>
 
         <!-- FAQ -->
-        <section class="py-16 sm:py-24">
+        <section class="py-16 sm:py-24 bg-white border-t border-cerulean/15">
             <div class="max-w-3xl mx-auto px-4">
-                <h2 class="reveal text-2xl sm:text-3xl font-extrabold tracking-tight mb-10">Common questions</h2>
-                <div class="reveal divide-y divide-sand-200 border-y border-sand-200">
+                <h2 class="reveal text-2xl sm:text-3xl font-extrabold tracking-tight mb-10">Frequently asked questions</h2>
+                <div class="reveal divide-y divide-cerulean/15 border-y border-cerulean/15">
                     <details class="py-5" open>
                         <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
                             I don’t know German. Can I still apply?
-                            <span class="faq-plus text-brand-700 text-2xl leading-none">+</span>
+                            <span class="faq-plus text-cerulean text-2xl leading-none">+</span>
                         </summary>
-                        <p class="mt-3 text-slate-600 leading-relaxed">Yes. Start A1–B2 in Calicut. After B2, the same team processes your student course and visa.</p>
+                        <p class="mt-3 text-grey leading-relaxed">Yes. Start A1–B2 at Eduflair. After B2, our expert processing team handles your Ausbildung processing and visa application.</p>
                     </details>
                     <details class="py-5">
                         <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
                             I already have B2. Do I still need classes?
-                            <span class="faq-plus text-brand-700 text-2xl leading-none">+</span>
+                            <span class="faq-plus text-cerulean text-2xl leading-none">+</span>
                         </summary>
-                        <p class="mt-3 text-slate-600 leading-relaxed">Usually no. Pick “Already certified.” We verify Goethe, TELC, OSD, or similar, then process.</p>
-                    </details>
-                    <details class="py-5">
-                        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-                            How long until I reach Germany?
-                            <span class="faq-plus text-brand-700 text-2xl leading-none">+</span>
-                        </summary>
-                        <p class="mt-3 text-slate-600 leading-relaxed">From scratch: about 8 months of German, then ~6 months processing, plus embassy time. Already B2? Skip the language block.</p>
-                    </details>
-                    <details class="py-5">
-                        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-                            Worker or student?
-                            <span class="faq-plus text-brand-700 text-2xl leading-none">+</span>
-                        </summary>
-                        <p class="mt-3 text-slate-600 leading-relaxed">Student. You train on a stipend. A full-time role typically comes after you finish the course.</p>
+                        <p class="mt-3 text-grey leading-relaxed">Usually no. Pick “Already B2 certified.” We verify Goethe, TELC, OSD, or similar, then process.</p>
                     </details>
                     <details class="py-5">
                         <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
                             Is a blocked account required?
-                            <span class="faq-plus text-brand-700 text-2xl leading-none">+</span>
+                            <span class="faq-plus text-cerulean text-2xl leading-none">+</span>
                         </summary>
-                        <p class="mt-3 text-slate-600 leading-relaxed">Not for Ausbildung. The stipend is meant to cover living costs.</p>
+                        <p class="mt-3 text-grey leading-relaxed">Blocked account is not required for Ausbildung. The monthly stipend will cover all living costs.</p>
                     </details>
                     <details class="py-5">
                         <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
                             Where are classes held?
-                            <span class="faq-plus text-brand-700 text-2xl leading-none">+</span>
+                            <span class="faq-plus text-cerulean text-2xl leading-none">+</span>
                         </summary>
-                        <p class="mt-3 text-slate-600 leading-relaxed">Eduflair, 3rd Floor, RP Mall, Mavoor Road, Calicut 673004.</p>
+                        <p class="mt-3 text-grey leading-relaxed">The German language classes happen at Eduflair - World's Largest Language Campus</p>
                     </details>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-brand-900 text-white py-14 sm:py-16">
+    <footer class="bg-sherpa text-white py-14 sm:py-16">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">Ready to start?</h2>
-            <p class="text-emerald-100 mb-8 max-w-md mx-auto">Learn German first, or skip to processing if you’re already certified. Counseling is free.</p>
-            <a href="#apply" class="btn-live inline-flex items-center justify-center bg-white text-brand-900 font-bold px-8 py-3.5 rounded-xl hover:bg-sand-100">
-                Book free counseling
+            <h2 class="text-2xl sm:text-3xl font-extrabold mb-8">Ready to start?</h2>
+            <a href="#apply" class="btn-live inline-flex items-center justify-center bg-gold text-sherpa font-bold px-8 py-3.5 rounded-xl hover:bg-[#e8a520] shadow-lg shadow-gold/30">
+                Book free counselling
             </a>
-            <div class="mt-12 text-sm text-emerald-100/80 space-y-2">
+            <div class="mt-12 text-sm text-white/70 space-y-2">
                 <p class="text-white font-semibold">Eduflair Learning Solutions Pvt. Ltd.</p>
-                <p>3rd Floor, RP Mall, Mavoor Road, Calicut, Kerala - 673004</p>
+                <p>RP Mall, Mavoor Road, Calicut, Kerala - 673004</p>
                 <p class="flex flex-wrap justify-center gap-x-3 gap-y-1">
-                    <a href="tel:+918352010101" class="hover:text-white">+91 8352 01 01 01</a>
-                    <a href="mailto:info@eduflair.com" class="hover:text-white">info@eduflair.com</a>
-                    <a href="https://www.eduflair.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">www.eduflair.com</a>
+                    <a href="tel:+918352010101" class="hover:text-gold">+91 8352 01 01 01</a>
+                    <a href="mailto:info@eduflair.com" class="hover:text-gold">info@eduflair.com</a>
+                    <a href="https://www.eduflair.com" target="_blank" rel="noopener noreferrer" class="hover:text-gold">www.eduflair.com</a>
                 </p>
                 <nav class="flex justify-center items-center gap-5 pt-5" aria-label="Eduflair social">
                     <a href="https://in.linkedin.com/company/eduflair-learning-solutions" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Eduflair on LinkedIn">
@@ -540,16 +512,16 @@
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
                     </a>
                 </nav>
-                <p class="pt-6 text-emerald-200/50">© 2026 Eduflair Learning Solutions Pvt. Ltd.</p>
+                <p class="pt-6 text-white/40">© 2026 Eduflair Learning Solutions Pvt. Ltd.</p>
             </div>
         </div>
     </footer>
 
     <!-- Already-submitted sheet -->
     <div id="lead-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden opacity-0 transition-opacity">
-        <div class="absolute inset-0 bg-ink/60" id="modal-backdrop"></div>
+        <div class="absolute inset-0 bg-sherpa/60" id="modal-backdrop"></div>
         <div id="modal-content" class="relative bg-white rounded-2xl p-6 sm:p-8 w-full max-w-md mx-4 scale-95 transition-transform">
-            <button id="close-modal" class="absolute top-3 right-3 text-slate-400 hover:text-ink" aria-label="Close">
+            <button id="close-modal" class="absolute top-3 right-3 text-grey hover:text-sherpa" aria-label="Close">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
             <div id="modal-body"></div>
@@ -557,9 +529,9 @@
     </div>
 
     <!-- Mobile sticky CTA -->
-    <div id="sticky-cta" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-sand-200 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
-        <a href="#apply" class="btn-live flex items-center justify-center w-full bg-brand-900 text-white font-bold py-3.5 rounded-xl">
-            Book free counseling
+    <div id="sticky-cta" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-cerulean/15 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <a href="#apply" class="btn-live flex items-center justify-center w-full bg-gold text-sherpa font-bold py-3.5 rounded-xl">
+            Book free counselling
         </a>
     </div>
 
@@ -581,8 +553,8 @@
             const applyBox = document.getElementById('apply');
 
             const hints = {
-                language: 'A1–B2 in Calicut, then the same team processes your student course and visa.',
-                processing: 'Skip class. We map your course, student visa, and move — you go as a trainee on a stipend.'
+                language: 'A1–B2 at Eduflair. After B2, our expert processing team handles your Ausbildung processing and visa application.',
+                processing: 'Already B2 certified. We verify Goethe, TELC, OSD, or similar, then process.'
             };
 
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -629,8 +601,6 @@
                     const input = card.querySelector('input[name="path"]');
                     const on = !!(input && input.checked);
                     card.classList.toggle('is-on', on);
-                    card.classList.toggle('bg-white', !on);
-                    card.classList.toggle('border-sand-200', !on);
                 });
                 const selected = document.querySelector('input[name="path"]:checked');
                 if (!selected) return;
@@ -653,10 +623,10 @@
 
             const alreadyHTML = `
                 <h3 class="text-xl font-bold mb-2">We’re already on it</h3>
-                <p class="text-slate-600 text-sm mb-5">A counselor will reach you. Need it faster? Message or call now.</p>
+                <p class="text-grey text-sm mb-5">A counsellor will reach you. Need it faster? Message or call now.</p>
                 <div class="flex flex-col gap-2">
                     <a href="${WA_URL}" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-[#25D366] text-white font-semibold py-3 rounded-xl">WhatsApp us</a>
-                    <a href="tel:+918352010101" class="w-full text-center bg-brand-900 text-white font-semibold py-3 rounded-xl">Call +91 8352 01 01 01</a>
+                    <a href="tel:+918352010101" class="w-full text-center bg-sherpa text-white font-semibold py-3 rounded-xl">Call +91 8352 01 01 01</a>
                 </div>`;
 
             function showModal() {
@@ -725,7 +695,7 @@
                 const adminNoteParts = [
                     location ? `Location: ${location}` : '',
                     `Source: ${leadSource}`,
-                    path === 'processing' ? 'Path: Already certified — Ausbildung course/student visa processing' : 'Path: Learn German A1–B2 at Eduflair',
+                    path === 'processing' ? 'Path: Already B2 certified — Ausbildung course/student visa processing' : 'Path: Learn German A1–B2 at Eduflair',
                     germanLevel ? `German: ${germanLevel}` : '',
                     campaignName ? `Campaign: ${campaignName}` : '',
                     adsetName ? `Adset: ${adsetName}` : '',

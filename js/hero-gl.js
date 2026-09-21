@@ -15,8 +15,6 @@
     });
     if (!gl) return;
 
-    canvas.classList.add('is-live');
-
     function compile(type, source) {
         const shader = gl.createShader(type);
         gl.shaderSource(shader, source);
@@ -30,27 +28,34 @@
 
     const vs = compile(gl.VERTEX_SHADER, [
         'attribute vec2 a_pos;',
-        'attribute float a_size;',
-        'attribute float a_alpha;',
-        'uniform vec2 u_res;',
-        'varying float v_a;',
         'void main() {',
-        '  vec2 clip = (a_pos / u_res) * 2.0 - 1.0;',
-        '  gl_Position = vec4(clip.x, -clip.y, 0.0, 1.0);',
-        '  gl_PointSize = a_size;',
-        '  v_a = a_alpha;',
+        '  gl_Position = vec4(a_pos, 0.0, 1.0);',
         '}'
     ].join('\n'));
 
     const fs = compile(gl.FRAGMENT_SHADER, [
         'precision mediump float;',
-        'varying float v_a;',
-        'uniform vec3 u_color;',
+        'uniform vec2 u_res;',
+        'uniform float u_time;',
+        'uniform float u_mobile;',
         'void main() {',
-        '  vec2 c = gl_PointCoord - vec2(0.5);',
-        '  float d = length(c);',
-        '  float g = smoothstep(0.48, 0.14, d);',
-        '  gl_FragColor = vec4(u_color, v_a * g);',
+        '  vec2 uv = gl_FragCoord.xy / u_res;',
+        '  float bands = 0.0;',
+        '  float y0 = 0.28 + sin(uv.x * 7.2 + u_time * 0.35) * 0.045 + sin(uv.x * 18.0 - u_time * 0.8) * 0.012;',
+        '  float y1 = 0.48 + sin(uv.x * 7.2 + u_time * 0.35 + 1.4) * 0.045 + sin(uv.x * 18.0 - u_time * 0.8 + 1.0) * 0.012;',
+        '  float y2 = 0.68 + sin(uv.x * 7.2 + u_time * 0.35 + 2.8) * 0.045 + sin(uv.x * 18.0 - u_time * 0.8 + 2.0) * 0.012;',
+        '  bands += smoothstep(0.04, 0.0, abs(uv.y - y0)) * 0.42;',
+        '  bands += smoothstep(0.04, 0.0, abs(uv.y - y1)) * 0.42;',
+        '  if (u_mobile < 0.5) bands += smoothstep(0.04, 0.0, abs(uv.y - y2)) * 0.36;',
+        '  vec2 o1 = vec2(0.18 + sin(u_time * 0.12) * 0.08, 0.62 + cos(u_time * 0.09) * 0.06);',
+        '  vec2 o2 = vec2(0.78 + cos(u_time * 0.1) * 0.07, 0.28 + sin(u_time * 0.14) * 0.05);',
+        '  float orbs = exp(-12.0 * length(uv - o1)) * 0.38 + exp(-10.0 * length(uv - o2)) * 0.28;',
+        '  if (u_mobile > 0.5) orbs *= 0.65;',
+        '  float glow = bands + orbs;',
+        '  vec3 cerulean = vec3(0.090, 0.506, 0.635);',
+        '  vec3 gold = vec3(0.992, 0.718, 0.188);',
+        '  vec3 col = mix(cerulean, gold, clamp(orbs * 1.4, 0.0, 1.0));',
+        '  gl_FragColor = vec4(col, glow * 0.62);',
         '}'
     ].join('\n'));
 
@@ -63,129 +68,92 @@
     if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return;
     gl.useProgram(program);
 
+    const buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+        -1, -1, 1, -1, -1, 1,
+        -1, 1, 1, -1, 1, 1
+    ]), gl.STATIC_DRAW);
+
     const locPos = gl.getAttribLocation(program, 'a_pos');
-    const locSize = gl.getAttribLocation(program, 'a_size');
-    const locAlpha = gl.getAttribLocation(program, 'a_alpha');
+    gl.enableVertexAttribArray(locPos);
+    gl.vertexAttribPointer(locPos, 2, gl.FLOAT, false, 0, 0);
+
     const locRes = gl.getUniformLocation(program, 'u_res');
-    const locColor = gl.getUniformLocation(program, 'u_color');
-
-    const mobile = window.matchMedia('(max-width: 767px)').matches;
-    const count = mobile ? 36 : 72;
-    const particles = [];
-    for (let i = 0; i < count; i += 1) {
-        particles.push({
-            x: Math.random(),
-            y: Math.random(),
-            vx: (Math.random() - 0.5) * 0.018,
-            vy: (Math.random() - 0.5) * 0.012,
-            size: mobile ? 8 + Math.random() * 14 : 10 + Math.random() * 22,
-            alpha: 0.12 + Math.random() * 0.22
-        });
-    }
-
-    const pos = new Float32Array(count * 2);
-    const size = new Float32Array(count);
-    const alpha = new Float32Array(count);
-    const posBuf = gl.createBuffer();
-    const sizeBuf = gl.createBuffer();
-    const alphaBuf = gl.createBuffer();
+    const locTime = gl.getUniformLocation(program, 'u_time');
+    const locMobile = gl.getUniformLocation(program, 'u_mobile');
 
     gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-    gl.uniform3f(locColor, 0.043, 0.231, 0.141);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
 
-    let width = 1;
-    let height = 1;
     let running = false;
-    let visible = false;
+    let visible = true;
+    let pageVisible = document.visibilityState === 'visible';
     let raf = 0;
-    let last = 0;
+    let start = performance.now();
+
+    function isMobile() {
+        return window.matchMedia('(max-width: 767px)').matches;
+    }
 
     function resize() {
-        const rect = stage.getBoundingClientRect();
-        const dpr = Math.min(window.devicePixelRatio || 1, mobile ? 1.25 : 1.5);
-        width = Math.max(1, Math.floor(rect.width));
-        height = Math.max(1, Math.floor(rect.height));
-        canvas.width = Math.floor(width * dpr);
-        canvas.height = Math.floor(height * dpr);
-        canvas.style.width = width + 'px';
-        canvas.style.height = height + 'px';
-        gl.viewport(0, 0, canvas.width, canvas.height);
-        gl.uniform2f(locRes, width, height);
-    }
-
-    function step(dt) {
-        for (let i = 0; i < count; i += 1) {
-            const p = particles[i];
-            p.x += p.vx * dt;
-            p.y += p.vy * dt;
-            if (p.x < -0.05) p.x = 1.05;
-            if (p.x > 1.05) p.x = -0.05;
-            if (p.y < -0.05) p.y = 1.05;
-            if (p.y > 1.05) p.y = -0.05;
-            pos[i * 2] = p.x * width;
-            pos[i * 2 + 1] = p.y * height;
-            size[i] = p.size;
-            alpha[i] = p.alpha;
+        const dpr = Math.min(window.devicePixelRatio || 1, isMobile() ? 1 : 1.5);
+        const w = Math.max(1, Math.floor(stage.clientWidth * dpr));
+        const h = Math.max(1, Math.floor(stage.clientHeight * dpr));
+        if (canvas.width !== w || canvas.height !== h) {
+            canvas.width = w;
+            canvas.height = h;
         }
+        gl.viewport(0, 0, canvas.width, canvas.height);
+        gl.uniform2f(locRes, canvas.width, canvas.height);
+        gl.uniform1f(locMobile, isMobile() ? 1 : 0);
     }
 
-    function draw() {
+    function frame(now) {
+        if (!running) return;
+        gl.uniform1f(locTime, (now - start) / 1000);
         gl.clearColor(0, 0, 0, 0);
         gl.clear(gl.COLOR_BUFFER_BIT);
-
-        gl.bindBuffer(gl.ARRAY_BUFFER, posBuf);
-        gl.bufferData(gl.ARRAY_BUFFER, pos, gl.DYNAMIC_DRAW);
-        gl.enableVertexAttribArray(locPos);
-        gl.vertexAttribPointer(locPos, 2, gl.FLOAT, false, 0, 0);
-
-        gl.bindBuffer(gl.ARRAY_BUFFER, sizeBuf);
-        gl.bufferData(gl.ARRAY_BUFFER, size, gl.DYNAMIC_DRAW);
-        gl.enableVertexAttribArray(locSize);
-        gl.vertexAttribPointer(locSize, 1, gl.FLOAT, false, 0, 0);
-
-        gl.bindBuffer(gl.ARRAY_BUFFER, alphaBuf);
-        gl.bufferData(gl.ARRAY_BUFFER, alpha, gl.DYNAMIC_DRAW);
-        gl.enableVertexAttribArray(locAlpha);
-        gl.vertexAttribPointer(locAlpha, 1, gl.FLOAT, false, 0, 0);
-
-        gl.drawArrays(gl.POINTS, 0, count);
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        raf = requestAnimationFrame(frame);
     }
 
-    function tick(now) {
-        if (!running) return;
-        const dt = Math.min(0.05, (now - last) / 1000 || 0.016);
-        last = now;
-        step(dt);
-        draw();
-        raf = requestAnimationFrame(tick);
-    }
-
-    function start() {
-        if (running || document.hidden || !visible) return;
+    function play() {
+        if (running || !visible || !pageVisible) return;
         running = true;
-        last = performance.now();
-        raf = requestAnimationFrame(tick);
+        resize();
+        raf = requestAnimationFrame(frame);
     }
 
-    function stop() {
+    function pause() {
         running = false;
         if (raf) cancelAnimationFrame(raf);
         raf = 0;
     }
 
+    function sync() {
+        if (visible && pageVisible) play();
+        else pause();
+    }
+
+    canvas.classList.add('is-live');
     resize();
     window.addEventListener('resize', resize, { passive: true });
 
     document.addEventListener('visibilitychange', () => {
-        if (document.hidden) stop();
-        else start();
+        pageVisible = document.visibilityState === 'visible';
+        sync();
     });
 
-    const io = new IntersectionObserver(([entry]) => {
-        visible = entry.isIntersecting && entry.intersectionRatio > 0.08;
-        if (visible) start();
-        else stop();
-    }, { threshold: [0, 0.08, 0.2] });
-    io.observe(stage);
-})();
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            visible = entries.some((entry) => entry.isIntersecting);
+            sync();
+        }, { threshold: 0.08 });
+        io.observe(stage);
+    } else {
+        visible = true;
+    }
+
+    sync();
+}());
