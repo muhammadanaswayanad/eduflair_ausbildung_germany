@@ -118,6 +118,18 @@
             border-color: rgba(23, 129, 162, 0.4);
             box-shadow: 0 16px 34px -20px rgba(0, 59, 73, 0.4);
         }
+        .review-text {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+        }
+        .google-g {
+            display: inline-flex;
+            width: 1.1rem;
+            height: 1.1rem;
+            flex-shrink: 0;
+        }
         details summary { transition: color 0.18s ease; }
         details summary:hover { color: #1781A2; }
         .hero-grid {
@@ -213,7 +225,7 @@
                             <p class="text-xs text-white/70 mt-1">Study German at Eduflair</p>
                         </div>
                         <div class="stat-chip">
-                            <p class="font-extrabold text-gold text-xl">€1,500+</p>
+                            <p class="font-extrabold text-gold text-xl">₹1,50,000+</p>
                             <p class="text-xs text-white/70 mt-1">Monthly stipend</p>
                         </div>
                         <div class="stat-chip">
@@ -308,7 +320,7 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <article id="course" class="reveal reveal-d1 lift bg-white border border-cerulean/15 rounded-2xl overflow-hidden">
                         <figure class="media-card h-40 sm:h-44">
-                            <img class="pos-mid" src="images/class-group.webp" alt="German class at the World's Largest Language Campus" width="1800" height="1273" loading="lazy">
+                            <img class="pos-mid" src="images/class-lecture.webp" alt="German class at the World's Largest Language Campus" width="1800" height="1200" loading="lazy">
                         </figure>
                         <div class="p-7 sm:p-9">
                         <p class="text-xs font-semibold uppercase tracking-[0.16em] text-cerulean mb-3">Path 1</p>
@@ -322,7 +334,7 @@
                             <li>Free Exam Preparation &amp; Practice Sessions</li>
                         </ul>
                         <div class="mt-6 rounded-xl bg-[#F4F7F8] border border-cerulean/15 p-4 text-sm text-sherpa">
-                            <p><strong>Eligibility:</strong> 55%+ in 12th · Age limit 18-23 · B2 German (we teach it if you don’t have it).</p>
+                            <p><strong>Eligibility:</strong> 55%+ in 12th · Age limit 18-25 · B2 German (we teach it if you don’t have it).</p>
                         </div>
                         <a href="#apply" data-select-path="language" class="mt-7 inline-flex font-semibold text-cerulean hover:text-sherpa">Start with German →</a>
                         </div>
@@ -336,12 +348,12 @@
                         <h3 class="text-xl font-bold mb-2">Already German B2 certified?</h3>
                         <p class="text-white/85 mb-4">We help you select the Ausbildung course right for you, handle documentation and visa processing, and get you to Germany to build your dream career.</p>
                         <ul class="space-y-3 text-white/90">
-                            <li>Trades available: Nursing, IT, Mechatronics, Logistics, Hotel management, and many more.</li>
+                            <li>Trades available: Nursing, IT, Mechatronics, Logistics, Hotel Management, and many more.</li>
                             <li>Language assessment, interview prep, documentation, and visa processing.</li>
                             <li>Proven track record of 100% visa success rate.</li>
                         </ul>
                         <div class="mt-6 rounded-xl bg-white/10 border border-white/15 p-4 text-sm text-white/90">
-                            <p><strong>Eligibility:</strong> 55%+ in 12th · Age limit 18-23 · German B2 certified.</p>
+                            <p><strong>Eligibility:</strong> 55%+ in 12th · Age limit 18-25 · German B2 certified.</p>
                         </div>
                         <a href="#apply" data-select-path="processing" class="mt-7 inline-flex font-semibold text-gold hover:text-white">Start processing →</a>
                         </div>
@@ -359,7 +371,7 @@
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     <div class="reveal reveal-d1 lift bg-[#F4F7F8] border border-cerulean/15 rounded-2xl p-6 sm:p-7">
                         <p class="font-bold mb-2">Stipend while you train</p>
-                        <p class="text-sm text-grey">€1,500–€1,900 a month during the course.</p>
+                        <p class="text-sm text-grey">₹1,50,000 - ₹1,90,000 a month during the course.</p>
                     </div>
                     <div class="reveal reveal-d2 lift bg-[#F4F7F8] border border-cerulean/15 rounded-2xl p-6 sm:p-7">
                         <p class="font-bold mb-2">Tuition covered</p>
@@ -379,7 +391,7 @@
                     </div>
                     <div class="reveal reveal-d3 lift bg-[#F4F7F8] border border-cerulean/15 rounded-2xl p-6 sm:p-7">
                         <p class="font-bold mb-2">In-demand fields</p>
-                        <p class="text-sm text-grey">Nursing, IT, Mechatronics, Hotel management, Logistics, and trades.</p>
+                        <p class="text-sm text-grey">Nursing, IT, Mechatronics, Hotel Management, Logistics, and trades.</p>
                     </div>
                 </div>
             </div>
@@ -393,50 +405,89 @@
                     <img class="pos-mid" src="images/gradiesta-graduation.webp" alt="Graduation ceremony at Eduflair" width="1024" height="683" loading="lazy">
                 </figure>
                 <div class="grid md:grid-cols-3 gap-5">
-                    <blockquote class="reveal reveal-d1 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
-                        <p class="text-sherpa leading-relaxed flex-1">“A1 to B2 at Eduflair. Processing was clear. Offer letter in 3 months — then Germany.”</p>
-                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
-                            <p class="font-bold">Nandana Sivadasan</p>
-                            <p class="text-sm text-cerulean">B2 here · now in Germany</p>
-                        </footer>
+                    <blockquote class="reveal reveal-d1 quote-card bg-white border border-cerulean/15 rounded-2xl p-5 sm:p-6 flex flex-col">
+                        <header class="flex items-start gap-3 mb-3">
+                            <img src="images/reviews/aparna-vidya.png" alt="" width="48" height="48" class="w-12 h-12 rounded-full object-cover flex-shrink-0" loading="lazy">
+                            <div class="min-w-0 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <p class="font-bold truncate">Aparna Vidya</p>
+                                    <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                                </div>
+                                <p class="text-xs text-grey">Google review · a month ago</p>
+                                <p class="text-gold text-sm tracking-wide mt-1" aria-label="5 stars">★★★★★</p>
+                            </div>
+                        </header>
+                        <p class="review-text text-sherpa leading-relaxed text-sm flex-1">I learned German language with Eduflair... And currently I am in Germany.. successfully achieved what I wanted. And literally satisfied for everything that Eduflair did... Including their flexible studying method, exam preparation and fast processing. It took around one and half year for me to complete my language, exam clearing and processing all together. Really thankful to Eduflair and my faculties, who supported me Always and gave me the courage to crack one of the difficult language " German". Thank you again ... You guys are really the light of hope for a lot of students who's dreaming high...</p>
                     </blockquote>
-                    <blockquote class="reveal reveal-d2 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
-                        <p class="text-sherpa leading-relaxed flex-1">“I came after B2. Offer letter in 3 months. On 20 August I flew to Germany.”</p>
-                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
-                            <p class="font-bold">Anju Joby</p>
-                            <p class="text-sm text-cerulean">Already B2 certified</p>
-                        </footer>
+                    <blockquote class="reveal reveal-d2 quote-card bg-white border border-cerulean/15 rounded-2xl p-5 sm:p-6 flex flex-col">
+                        <header class="flex items-start gap-3 mb-3">
+                            <img src="images/reviews/anooja-binu.png" alt="" width="48" height="48" class="w-12 h-12 rounded-full object-cover flex-shrink-0" loading="lazy">
+                            <div class="min-w-0 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <p class="font-bold truncate">Anooja Binu</p>
+                                    <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                                </div>
+                                <p class="text-xs text-grey">Google review · a month ago</p>
+                                <p class="text-gold text-sm tracking-wide mt-1" aria-label="5 stars">★★★★★</p>
+                            </div>
+                        </header>
+                        <p class="review-text text-sherpa leading-relaxed text-sm flex-1">I had my processing through Eduflair, and it was a really nice and smooth experience. The counsellors were very supportive, friendly, and always ready to clear my doubts. They guided me throughout the entire process and kept me updated at every step. The entire team was approachable and made the process much less stressful for me. I’m really happy with the support and guidance I received from Eduflair.</p>
                     </blockquote>
-                    <blockquote class="reveal reveal-d3 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
-                        <p class="text-sherpa leading-relaxed flex-1">“Classes and teachers were strong. Processing took 6 months. I’m in Germany now.”</p>
-                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
-                            <p class="font-bold">Fiyona Sara Binu</p>
-                            <p class="text-sm text-cerulean">Language + processing</p>
-                        </footer>
+                    <blockquote class="reveal reveal-d3 quote-card bg-white border border-cerulean/15 rounded-2xl p-5 sm:p-6 flex flex-col">
+                        <header class="flex items-start gap-3 mb-3">
+                            <img src="images/reviews/arathi-sankar.png" alt="" width="48" height="48" class="w-12 h-12 rounded-full object-cover flex-shrink-0" loading="lazy">
+                            <div class="min-w-0 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <p class="font-bold truncate">Arathi Sankar</p>
+                                    <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                                </div>
+                                <p class="text-xs text-grey">Google review · 8 months ago</p>
+                                <p class="text-gold text-sm tracking-wide mt-1" aria-label="5 stars">★★★★★</p>
+                            </div>
+                        </header>
+                        <p class="review-text text-sherpa leading-relaxed text-sm flex-1">I’ve studied here and the classes were very helpful and well-planned. The guidance and support I received helped me crack my B2 exam successfully. They also guided me through my Germany processing. Overall, a very supportive and reliable team. Highly recommended !!</p>
                     </blockquote>
-                    <blockquote class="reveal reveal-d1 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
-                        <p class="text-gold text-sm tracking-wide mb-3" aria-hidden="true">★★★★★</p>
-                        <p class="text-sherpa leading-relaxed flex-1">“I learned German language with Eduflair, and currently I am in Germany — successfully achieved what I wanted. Literally satisfied with everything Eduflair did, including their flexible studying method, exam preparation and fast processing.”</p>
-                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
-                            <p class="font-bold">Student review</p>
-                            <p class="text-sm text-cerulean">Published on eduflair.com</p>
-                        </footer>
+                    <blockquote class="reveal reveal-d1 quote-card bg-white border border-cerulean/15 rounded-2xl p-5 sm:p-6 flex flex-col">
+                        <header class="flex items-start gap-3 mb-3">
+                            <img src="images/reviews/rhithupriya-santhosh.png" alt="" width="48" height="48" class="w-12 h-12 rounded-full object-cover flex-shrink-0" loading="lazy">
+                            <div class="min-w-0 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <p class="font-bold truncate">Rhithupriya Santhosh</p>
+                                    <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                                </div>
+                                <p class="text-xs text-grey">Google review · 9 months ago</p>
+                                <p class="text-gold text-sm tracking-wide mt-1" aria-label="5 stars">★★★★★</p>
+                            </div>
+                        </header>
+                        <p class="review-text text-sherpa leading-relaxed text-sm flex-1">I had a great experience learning German at Eduflair Language Institute. The classes were clear, practical, and well-structured, and the teachers were always supportive and friendly. With their guidance, I was able to clear all four modules confidently. The institute creates a motivating environment that truly helps learners stay consistent and improve steadily. I’d definitely recommend Eduflair to anyone planning to learn German.</p>
                     </blockquote>
-                    <blockquote class="reveal reveal-d2 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
-                        <p class="text-gold text-sm tracking-wide mb-3" aria-hidden="true">★★★★★</p>
-                        <p class="text-sherpa leading-relaxed flex-1">“Hade a nice experience with Eduflair team. I have completed my A1 to B2 studies in Eduflair. Soon after my B2 completion I started my processing. Jumana ma'am was our processing consultant and she was very helpful and guided me through all the process. Highly recommended!”</p>
-                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
-                            <p class="font-bold">Student review</p>
-                            <p class="text-sm text-cerulean">Published on eduflair.com</p>
-                        </footer>
+                    <blockquote class="reveal reveal-d2 quote-card bg-white border border-cerulean/15 rounded-2xl p-5 sm:p-6 flex flex-col">
+                        <header class="flex items-start gap-3 mb-3">
+                            <img src="images/reviews/fiyona-sara-binu.png" alt="" width="48" height="48" class="w-12 h-12 rounded-full object-cover flex-shrink-0" loading="lazy">
+                            <div class="min-w-0 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <p class="font-bold truncate">Fiyona Sara Binu</p>
+                                    <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                                </div>
+                                <p class="text-xs text-grey">Google review · 2 years ago</p>
+                                <p class="text-gold text-sm tracking-wide mt-1" aria-label="5 stars">★★★★★</p>
+                            </div>
+                        </header>
+                        <p class="review-text text-sherpa leading-relaxed text-sm flex-1">Eduflair is a good consultancy. I did my A1-b2 in Eduflair. The classes, teachers and atmosphere are all very good. My processing time was very fast (6 months). I am currently in Germany and I recommend eduflair to students who are looking for a bright future.</p>
                     </blockquote>
-                    <blockquote class="reveal reveal-d3 quote-card bg-white border border-cerulean/15 rounded-2xl p-6 sm:p-7 flex flex-col">
-                        <p class="text-gold text-sm tracking-wide mb-3" aria-hidden="true">★★★★★</p>
-                        <p class="text-sherpa leading-relaxed flex-1">“EDUFLAIR Learning Solutions provides excellent coaching at a reasonable price. The affordable fees make it accessible for all. Great value for money!”</p>
-                        <footer class="mt-6 pt-4 border-t border-cerulean/15">
-                            <p class="font-bold">Gopika Mekkayil</p>
-                            <p class="text-sm text-cerulean">Justdial review</p>
-                        </footer>
+                    <blockquote class="reveal reveal-d3 quote-card bg-white border border-cerulean/15 rounded-2xl p-5 sm:p-6 flex flex-col">
+                        <header class="flex items-start gap-3 mb-3">
+                            <img src="images/reviews/anju-joby.png" alt="" width="48" height="48" class="w-12 h-12 rounded-full object-cover flex-shrink-0" loading="lazy">
+                            <div class="min-w-0 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <p class="font-bold truncate">Anju Joby</p>
+                                    <svg class="google-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                                </div>
+                                <p class="text-xs text-grey">Google review · 2 years ago</p>
+                                <p class="text-gold text-sm tracking-wide mt-1" aria-label="5 stars">★★★★★</p>
+                            </div>
+                        </header>
+                        <p class="review-text text-sherpa leading-relaxed text-sm flex-1">I had a good experience with this eduflair consultancy in my abroad education. After completing B2 examination I had approach this consultancy for processing. The team was awesome. I had received my offer letter within 3 months. And on 20th of August I have fly to germany. I am very satisfied with this team.</p>
                     </blockquote>
                 </div>
             </div>
@@ -459,7 +510,7 @@
                             I already have B2. Do I still need classes?
                             <span class="faq-plus text-cerulean text-2xl leading-none">+</span>
                         </summary>
-                        <p class="mt-3 text-grey leading-relaxed">Usually no. Pick “Already B2 certified.” We verify Goethe, TELC, OSD, or similar, then process.</p>
+                        <p class="mt-3 text-grey leading-relaxed">Usually no. Pick “Already B2 certified.” We verify Goethe, TELC, or similar, then process.</p>
                     </details>
                     <details class="py-5">
                         <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
@@ -554,7 +605,7 @@
 
             const hints = {
                 language: 'A1–B2 at Eduflair. After B2, our expert processing team handles your Ausbildung processing and visa application.',
-                processing: 'Already B2 certified. We verify Goethe, TELC, OSD, or similar, then process.'
+                processing: 'Already B2 certified. We verify Goethe, TELC, or similar, then process.'
             };
 
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
