@@ -141,6 +141,87 @@
             height: 1.1rem;
             flex-shrink: 0;
         }
+        /* Campus event logo marquee (light cards to match soft-grey review cards) */
+        .event-logo-marquee {
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+        .event-logo-track {
+            display: flex;
+            flex-wrap: nowrap;
+            width: max-content;
+            will-change: transform;
+            animation: event-logo-scroll 42s linear infinite;
+        }
+        .event-logo-set {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-shrink: 0;
+            align-items: stretch;
+            gap: 0.75rem;
+            padding-inline-end: 0.75rem;
+        }
+        .event-logo-marquee:focus { outline: none; }
+        .event-logo-marquee:focus-visible {
+            outline: 2px solid #1781A2;
+            outline-offset: 4px;
+        }
+        .event-logo-card {
+            background: #fff;
+            border: 1px solid rgba(23, 129, 162, 0.15);
+            border-radius: 1rem;
+            box-shadow: 0 8px 20px -16px rgba(0, 59, 73, 0.35);
+            height: 7.5rem;
+            width: 10.5rem;
+            flex: 0 0 10.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 1rem;
+            margin: 0;
+        }
+        .event-logo-card img {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+        @media (min-width: 640px) {
+            .event-logo-set {
+                gap: 1rem;
+                padding-inline-end: 1rem;
+            }
+            .event-logo-card {
+                height: 8.5rem;
+                width: 13.25rem;
+                flex: 0 0 13.25rem;
+            }
+        }
+        .event-logo-marquee:hover .event-logo-track,
+        .event-logo-marquee:focus-within .event-logo-track {
+            animation-play-state: paused;
+        }
+        @keyframes event-logo-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .event-logo-marquee {
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+            .event-logo-track {
+                animation: none;
+                will-change: auto;
+            }
+            .event-logo-set[aria-hidden="true"] {
+                display: none;
+            }
+        }
         details summary { transition: color 0.18s ease; }
         details summary:hover { color: #1781A2; }
         .hero-grid {
@@ -409,12 +490,86 @@
         </section>
 
         <!-- Stories -->
-        <section id="stories" class="py-16 sm:py-24">
+        <section id="stories" class="py-16 sm:py-24 overflow-x-hidden">
             <div class="max-w-6xl mx-auto px-4">
                 <h2 class="reveal text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">Hear from our students</h2>
-                <figure class="reveal media-card graduation-banner rounded-2xl mb-8">
+                <figure class="reveal media-card graduation-banner rounded-2xl mb-6">
                     <img src="images/gradiesta-graduation.webp" alt="Graduation ceremony at Eduflair" width="1024" height="299" loading="lazy">
                 </figure>
+                <div class="reveal event-logo-marquee mb-8" role="region" aria-label="Campus event logos" tabindex="0">
+                    <div class="event-logo-track">
+                        <div class="event-logo-set">
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-gradiesta.webp" alt="Gradiesta 4.0" width="900" height="507" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-melanam.webp" alt="Campus festival" width="900" height="507" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-onam.webp" alt="Onam 2026" width="900" height="507" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-frostveil.webp" alt="Frostveil" width="900" height="507" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-boobash.webp" alt="Halloween BooBash Party" width="900" height="624" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-oktoberfest.webp" alt="Oktober Fest 2K26" width="900" height="535" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-word-buster.webp" alt="German Word Buster" width="900" height="558" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-redekunst.webp" alt="Redekunst — elocution competition in German" width="900" height="590" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-aufbruch.webp" alt="Aufbruch — the grand flying ceremony" width="900" height="598" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-pflegestamme.webp" alt="Pflegestämme" width="900" height="507" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-orientation.webp" alt="German language orientation" width="900" height="507" loading="lazy">
+                            </figure>
+                        </div>
+                        <div class="event-logo-set" aria-hidden="true">
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-gradiesta.webp" alt="" width="900" height="507" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-melanam.webp" alt="" width="900" height="507" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-onam.webp" alt="" width="900" height="507" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-frostveil.webp" alt="" width="900" height="507" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-boobash.webp" alt="" width="900" height="624" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-oktoberfest.webp" alt="" width="900" height="535" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-word-buster.webp" alt="" width="900" height="558" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-redekunst.webp" alt="" width="900" height="590" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-aufbruch.webp" alt="" width="900" height="598" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-pflegestamme.webp" alt="" width="900" height="507" loading="lazy">
+                            </figure>
+                            <figure class="event-logo-card">
+                                <img src="images/events/event-orientation.webp" alt="" width="900" height="507" loading="lazy">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
                 <div class="grid md:grid-cols-3 gap-5">
                     <blockquote class="reveal reveal-d1 quote-card bg-white border border-cerulean/15 rounded-2xl p-5 sm:p-6 flex flex-col">
                         <header class="flex items-start gap-3 mb-3">
